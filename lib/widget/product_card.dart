@@ -145,25 +145,13 @@ class ProductCard extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       SizedBox(height: cardHeight * 0.01),
-                      // Product Title
-                      // Price Details
+
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Expanded(
-                            flex: 2,
-                            child: Text(
-                              "₹${(product.price - (product.price * product.discountPercentage / 100)).toStringAsFixed(2)}",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: priceFontSize,
-                                color: Colors.black,
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          SizedBox(width: cardWidth * 0.05),
-                          Expanded(
-                            flex: 3,
+                            flex: 0,
                             child: Text(
                               "₹${product.price.toStringAsFixed(2)}",
                               style: TextStyle(
@@ -174,6 +162,18 @@ class ProductCard extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),
+                          Expanded(
+                            flex: 0,
+                            child: Text(
+                              " ₹${(product.price - (product.price * product.discountPercentage / 100)).toStringAsFixed(2)}",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: priceFontSize,
+                                color: Colors.black,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          )
                         ],
                       ),
                       SizedBox(height: cardHeight * 0.02),
